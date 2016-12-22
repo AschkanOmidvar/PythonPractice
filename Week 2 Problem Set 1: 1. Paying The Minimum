@@ -1,0 +1,31 @@
+'''
+a program to calculate the credit card balance after one year if a person only 
+pays the minimum monthly payment required by the credit card company each month.
+
+Inputs:
+    # balance - the outstanding balance on the credit card
+    # annualInterestRate - annual interest rate as a decimal
+    # monthlyPaymentRate - minimum monthly payment rate as a decimal
+
+'''
+balance = 4842
+annualInterestRate = 0.2
+monthlyPaymentRate = 0.04
+
+month=1
+TempTotalPaid=0
+while month<=12:
+    MinimumPayment=round(balance*monthlyPaymentRate,2)
+    UnpaidBalance=round((balance-MinimumPayment),2)
+    Interest=round((UnpaidBalance*(annualInterestRate/12)),2)
+    balance=round((UnpaidBalance+Interest),2)
+    
+    print('Month: '+str(month))
+    print('Minimum monthly payment: '+str(MinimumPayment))
+    print('Remaining balance: '+str(balance))
+
+    month+=1
+    TempTotalPaid+=MinimumPayment
+
+print('Total paid: '+str(TempTotalPaid))
+print('Remaining balance: '+str(balance))
