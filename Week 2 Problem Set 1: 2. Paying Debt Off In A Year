@@ -1,0 +1,32 @@
+'''
+a program that calculates the minimum fixed monthly payment needed in order to 
+pay off a credit card balance within 12 months.
+
+inputs:
+     
+    balance: the outstanding balance on the credit card
+    annualInterestRate: annual interest rate as a decimal
+
+'''
+
+balance = 3926
+annualInterestRate = 0.2
+
+InitialBalance=balance
+Payment=10
+Requirement=False
+
+while Requirement==False:
+    for i in range(12):
+        UnpaidBalance=(balance-Payment)
+        Interest=(UnpaidBalance*(annualInterestRate/12))
+        balance=(UnpaidBalance+Interest)
+    if balance<=0:
+        Requirement=True
+    else:
+        Payment+=10
+        balance=InitialBalance
+print(Payment)
+print(balance)
+
+print('Lowest Payment: '+str(Payment))
