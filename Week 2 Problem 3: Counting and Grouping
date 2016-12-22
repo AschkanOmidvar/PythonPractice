@@ -1,0 +1,10 @@
+def item_order(order):
+    
+    if isinstance(order, str): 
+        num_salad=order.count('salad')
+        num_hamburger=order.count('hamburger')
+        num_water=order.count('water')
+        return 'salad:'+str(num_salad)+' '+'hamburger:'+str(num_hamburger)+' '+'water'+' '+str(num_water)
+    
+    else:
+        return None
