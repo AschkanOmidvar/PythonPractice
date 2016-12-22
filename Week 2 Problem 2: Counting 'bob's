@@ -1,0 +1,16 @@
+numbob=0
+for i in range(len(s)-1):
+    if s[i]=='b' and s[i+1]=='o' and s[i+2]=='b':
+        numbob+=1        
+print('Number of times bob occurs is:'+ ' '+ str(numbob))
+
+'''
+or
+'''
+
+
+numBobs = 0
+for i in range(1, len(s)-1):
+    if s[i-1:i+2] == 'bob':
+        numBobs += 1
+print 'Number of times bob occurs is:', numBobs
