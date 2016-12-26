@@ -1,0 +1,11 @@
+def nfruits(Type, eaten):
+    # Type of fruits available (dict)
+    # Eaten fruits's pattern (str)
+    subStr=eaten[:len(eaten)-1]
+    for letter in subStr:
+        Type[letter]-=2
+        for key in Type:
+            Type[key]+=1 
+    Type[eaten[-1]]-=1
+    print Type
+    return max(Type.values())
