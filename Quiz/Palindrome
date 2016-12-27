@@ -1,0 +1,16 @@
+def isPalindrome(aString):
+    
+    def toChars(aString):
+        aString = aString.lower()
+        ans = ''
+        for c in aString:
+            if c in 'abcdefghijklmnopqrstuvwxyz':
+                ans = ans + c
+        return ans
+        
+    if len(aString)<=1:
+        return True
+    if aString[0]==aString[-1]:
+        return isPalindrome(aString[1:len(aString)-1])
+    else:
+        return False
