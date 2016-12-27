@@ -1,0 +1,19 @@
+def dotProduct(listA, listB):
+    '''
+    listA: a list of numbers
+    listB: a list of numbers of the same length as listA
+    '''        
+    """
+    if len(listA)!=len(listB):
+        return False
+    else:
+        for i in range(len(listA)):
+            if type(listA[i])!=int or type(listB[i])!=int:
+                return False
+                break
+        return True
+    """
+    result=0
+    for i in range(len(listA)):
+        result+=listA[i]*listB[i]
+    return result
