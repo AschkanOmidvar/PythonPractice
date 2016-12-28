@@ -1,0 +1,28 @@
+def f(a,b):
+    return a+b
+    
+def dict_interdiff(d1,d2):
+    '''
+    d1, d2: dicts whose keys and values are integers
+    Returns a tuple of dictionaries according to the instructions above
+    '''
+    key1=set(d1)
+    key2=set(d2)
+    
+    similar_key=key1 & key2
+    different_key=key1-key2
+    in2=key2-key1
+    different_key.update(in2)
+
+    similar={}
+    for key in similar_key:
+        similar.update({key:f(d1[key],d2[key])})
+    
+    different={}
+    for key in different_key:
+        if key in d1.keys():
+            different.update({key:d1[key]})
+        else:
+            different.update({key:d2[key]})
+    
+    return (similar, different)
