@@ -8,10 +8,12 @@ def satisfiesF(L):
     Returns the length of L after mutation
     """
     for string in L:
-        print string
         if f(string)!=True:
             L.remove(string)
-        return L
-    
+    for string in L:
+        if f(string)==False:
+             L.remove(string)
+
+    return len(L)
 
 run_satisfiesF(L, satisfiesF)
