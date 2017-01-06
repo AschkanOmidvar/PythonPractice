@@ -1,0 +1,13 @@
+class Queue(object):
+    def __init__(self):
+        self.temp=[]
+    def insert(self,x):
+        assert type(x)==int
+        self.temp.append(x)
+        return self.temp
+    def remove(self):
+        try:
+            self.temp.remove(self.temp[0])
+        except:
+            raise ValueError()
+        return self.temp
